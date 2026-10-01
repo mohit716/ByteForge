@@ -1,5 +1,4 @@
-# source = "25 + 300 - 10 * 2 / 5"
-source = "25 + @"
+source = "25 + 300"
 
 tokens = []
 
@@ -40,4 +39,15 @@ while i < len(source):
 
     i += 1
 
-print(tokens)
+left = tokens[0]
+operator = tokens[1]
+right = tokens[2]
+
+ast = {
+    "type": "BinaryExpression",
+    "left": left,
+    "operator": operator,
+    "right": right
+}
+
+print(ast)
