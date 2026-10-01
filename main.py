@@ -1,4 +1,4 @@
-source = "2 + 3"
+source = "25 + 300"
 
 tokens = []
 
