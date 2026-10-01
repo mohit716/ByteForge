@@ -1,4 +1,5 @@
-source = "25 + 300 - 10 * 2 / 5"
+# source = "25 + 300 - 10 * 2 / 5"
+source = "25 + @"
 
 tokens = []
 
@@ -6,6 +7,11 @@ i = 0
 
 while i < len(source):
     char = source[i]
+
+    if char.isspace():
+        i += 1
+        continue
+
 
     if char.isdigit():
         number = ""
@@ -28,6 +34,9 @@ while i < len(source):
 
     elif char == "/":
         tokens.append(("DIVIDE", char))
+
+    else:
+        raise Exception(f"Invalid character: {char}")
 
     i += 1
 
