@@ -39,9 +39,16 @@ while i < len(source):
 
     i += 1
 
-left = tokens[0]
-operator = tokens[1]
-right = tokens[2]
+left = {
+    "type": "NumberLiteral",
+    "value": (int)(tokens[0][1])
+}
+operator = tokens[1][1]
+
+right = {
+    "type": "NumberLiteral",
+    "value": int(tokens[2][1])
+}
 
 ast = {
     "type": "BinaryExpression",
